@@ -18,14 +18,14 @@ function App() {
     <CssBaseline />
     <Navbar />
     <Routes>
-      <Route path="/user-details" component={UserDetails} />
-      <Route path="/calculators" component={Calculators} />
-      <Route path="/lender-qualifier" component={LenderQualifier} />
-      <Route path="/notes" component={Notes} />
-      <Route path="/cashly-copilot" component={CashlyCopilot} />
-      <Route path="/tech-services" component={TechServices} />
-      <Route path="/resources" component={Resources} />
-      <Route path="/" exact component={UserDetails} />
+      <Route path="/user-details" element={<UserDetails/>} />
+      <Route path="/calculators" element={<Calculators/>} />
+      <Route path="/lender-qualifier" element={<LenderQualifier/>} />
+      <Route path="/notes" element={<Notes/>} />
+      <Route path="/cashly-copilot" element={<CashlyCopilot/>} />
+      <Route path="/tech-services" element={<TechServices/>} />
+      <Route path="/resources" element={<Resources/>} />
+      <Route path="/" exact element={<UserDetails/>} />
     </Routes>
   </Router>
 );
