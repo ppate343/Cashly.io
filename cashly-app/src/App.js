@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router,Routes,  Route } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import UserDetails from './pages/UserDetails';
@@ -18,7 +17,7 @@ function App() {
     <Router>
     <CssBaseline />
     <Navbar />
-    <Switch>
+    <Routes>
       <Route path="/user-details" component={UserDetails} />
       <Route path="/calculators" component={Calculators} />
       <Route path="/lender-qualifier" component={LenderQualifier} />
@@ -27,7 +26,7 @@ function App() {
       <Route path="/tech-services" component={TechServices} />
       <Route path="/resources" component={Resources} />
       <Route path="/" exact component={UserDetails} />
-    </Switch>
+    </Routes>
   </Router>
 );
 }
