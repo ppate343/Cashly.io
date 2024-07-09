@@ -1,49 +1,56 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Typography } from '@mui/material';
-import {Menu} from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { IconContext } from "react-icons";
+import { CiMenuBurger } from "react-icons/ci";
+import { FaHouseUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { Sidebar } from "./Sidebar";
+import "../assets/Navbar.css";
 
-const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
 
-  const toggleDrawer = (open) => () => {
-    setDrawerOpen(open);
-  };
-
-  const menuItems = [
-    { text: 'User Details', path: '/user-details' },
-    { text: 'Cashly CRM', path: 'https://app.gocashly.io/' },
-    { text: 'Calculators', path: '/calculators' },
-    { text: 'Lender Qualifier', path: '/lender-qualifier' },
-    { text: 'Notes', path: '/notes' },
-    { text: 'Cashly Copilot', path: '/cashly-copilot' },
-    { text: 'Tech Services', path: '/tech-services' },
-    { text: 'Resources', path: '/resources' },
-  ];
+  const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-            <Menu/>
-          </IconButton>
-          <Typography variant="h6">
-            Cashly Inc.
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        <List>
-          {menuItems.map((item) => (
-            <ListItem button key={item.text} component={Link} to={item.path} onClick={toggleDrawer(false)}>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+      <IconContext.Provider value={{ color: "black" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+          <CiMenuBurger onClick={showSidebar} />
+          </Link>
+        </div>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+              <CiMenuBurger class='active-icon' onClick={showSidebar} />
+              </Link>
+            </li>
+            <div class='user-name'>Puja Patel</div>
+            {Sidebar.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+            <div class='profile-type'>
+            <IconContext.Provider value={{ color: "white" }}>
+              <FaHouseUser class='profile-icon'/>
+              <div class='profile-text'> Cashly Inc.
+              <div>Agent Profile</div>
+              </div>
+              
+            </IconContext.Provider>
+            </div>
+          </ul> 
+        </nav>
+      </IconContext.Provider>
     </>
   );
-};
+}
 
 export default Navbar;
