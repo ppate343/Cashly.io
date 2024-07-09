@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaNotesMedical } from "react-icons/fa6";
 import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as LuIcons from "react-icons/lu";
 import * as ImIcons from "react-icons/im";
@@ -10,7 +9,7 @@ export const Sidebar = [
   {
     title: 'User Details',
     path: '/',
-    icon: <AiIcons.AiFillHome />,
+    icon: <FaIcons.FaRegUserCircle/>,
     cName: 'nav-text'
   },
   {
