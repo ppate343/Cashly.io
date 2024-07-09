@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router,Routes,  Route } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
-import Navbar from './components/Navbar';
+import Navbar from'./components/Navbar'; 
 import UserDetails from './pages/UserDetails';
 import Calculators from './pages/Calculators';
 import LenderQualifier from './pages/LenderQualifier';
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
     <CssBaseline />
-    <Navbar />
+    <Navbar/>
     <Routes>
       <Route path="/user-details" element={<UserDetails/>} />
       <Route path="/calculators" element={<Calculators/>} />
