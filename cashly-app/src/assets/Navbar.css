@@ -1,11 +1,12 @@
 .navbar {
     background-color: white;
-    height: 80px;
+    height: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
     position: relative;
     z-index: 1050;
+    margin-top: 0.5%;
   }
   
   .menu-bars {
@@ -16,7 +17,7 @@
   
   .nav-menu {
     background-color: white;
-    width: 250px;
+    width: 20%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -89,7 +90,7 @@
 }
 
 .profile-type {
-    margin-top: 90%; 
+    margin-top: 50%; 
     margin-left: 10%;
     width: 90%;
     height: 10%; 
