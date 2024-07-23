@@ -5,7 +5,7 @@
     justify-content: start;
     align-items: center;
     position: relative;
-    z-index: 1050;
+    z-index: 999;
     margin-top: 0.5%;
   }
   
@@ -90,7 +90,7 @@
 }
 
 .profile-type {
-    margin-top: 50%; 
+    margin-top: 40%; 
     margin-left: 10%;
     width: 90%;
     height: 10%; 

@@ -9,6 +9,9 @@ import Notes from './pages/Notes';
 import CashlyCopilot from './pages/CashlyCopilot';
 import TechServices from './pages/TechServices';
 import Resources from './pages/Resources';
+import OAuthCallback from './components/OAuthCallBack'
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
 
 
 function App() {
@@ -17,6 +20,8 @@ function App() {
     <CssBaseline />
     <Navbar/>
     <Routes>
+      <Route path="/" element={<Login/>} /> 
+      <Route path="/dashboard" exact element={<Dashboard/>} />
       <Route path="/user-details" element={<UserDetails/>} />
       <Route path="/calculators" element={<Calculators/>} />
       <Route path="/lender-qualifier" element={<LenderQualifier/>} />
@@ -24,7 +29,8 @@ function App() {
       <Route path="/cashly-copilot" element={<CashlyCopilot/>} />
       <Route path="/tech-services" element={<TechServices/>} />
       <Route path="/resources" element={<Resources/>} />
-      <Route path="/" exact element={<UserDetails/>} />
+      <Route path="/oauth/callback" element={<OAuthCallback/>} />
+      
     </Routes>
   </Router>
 );

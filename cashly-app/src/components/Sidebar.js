@@ -7,8 +7,14 @@ import * as ImIcons from "react-icons/im";
 
 export const Sidebar = [
   {
+    title: 'Dashboard',
+    path: '/dashboard',
+    icon: <FaIcons.FaRegUserCircle/>,
+    cName: 'nav-text'
+  },
+  {
     title: 'User Details',
-    path: '/',
+    path: '/user-details',
     icon: <FaIcons.FaRegUserCircle/>,
     cName: 'nav-text'
   },

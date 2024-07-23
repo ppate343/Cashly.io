@@ -3,7 +3,7 @@ import { Box, Paper, Avatar, Typography, TextField, Grid, Button } from '@mui/ma
 
 const UserDetails = () => {
   return (
-     <Box sx={{ p: 3 }}>
+    <Box sx={{ p: 3 }}>
     <Paper elevation={3} sx={{ p: 3 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
