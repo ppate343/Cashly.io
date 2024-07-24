@@ -1,4 +1,3 @@
-// src/components/OAuthCallback.js
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -10,11 +9,19 @@ const OAuthCallback = () => {
   useEffect(() => {
     const fetchAccessToken = async () => {
       const code = new URLSearchParams(location.search).get('code');
+      console.log("The code fetched from URL: ", code);
       try {
-        await axios.get(`http://localhost:3000/oauth/callback/gohighlevel?code=${code}`);
+        const response = await axios.get(`http://localhost:3000/oauth/callback?code=${code}`);
+        const accessToken = new URLSearchParams(response.data).get('access_token');
+        console.log('Access token:', accessToken);
+
+        // Store the access token in local storage
+        localStorage.setItem('access_token', accessToken);
+
+        // Navigate to the dashboard
         navigate('/dashboard');
       } catch (error) {
-        console.error('Failed to fetch access token:', error.message);
+        console.error('Failed to fetch access token:', error.response ? error.response.data : error.message);
       }
     };
 

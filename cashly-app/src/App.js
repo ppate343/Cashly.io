@@ -11,7 +11,7 @@ import TechServices from './pages/TechServices';
 import Resources from './pages/Resources';
 import OAuthCallback from './components/OAuthCallBack'
 import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
+import Login from './pages/Login.js'
 
 
 function App() {
